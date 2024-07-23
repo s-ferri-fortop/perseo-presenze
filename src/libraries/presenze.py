@@ -211,6 +211,7 @@ class Presenze:
             f.write(xml_str)
         return file_path_to_save
 
+
     ## il mio metodo
     def create_zip(self, month_number):
         output = str(Path(os.path.dirname(os.path.realpath(__file__)), "data/output", encoding="utf-8"))
