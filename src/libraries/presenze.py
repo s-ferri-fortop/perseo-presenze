@@ -53,7 +53,10 @@ class Presenze:
                     continue
                 else:
                     for i in range(1, len_col):
-                        date = datetime.date(year, month_number, i)
+                        try:
+                            date = datetime.date(year, month_number, i)
+                        except ValueError:
+                            break
                         nr_ore = row[i]
                         movimento = Movimento(value, date, nr_ore)
                         movimenti.append(movimento)
