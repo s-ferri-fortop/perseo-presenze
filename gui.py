@@ -22,10 +22,10 @@ if uploaded_file is not None:
 
     if submitted:
         presenze = Presenze()
-        dipendenti = presenze.read_file(uploaded_file, uploaded_file.name, 6, 2024)
+        month, year = year_month.split('/')
+        dipendenti = presenze.read_file(uploaded_file, uploaded_file.name, int(month), int(year))
         # st.write(dipendenti)
 
-        month, year = year_month.split('/')
 
         filename = presenze.create_xml(dipendenti, int(month))
         # st.write(presenze)
