@@ -37,13 +37,13 @@ class Presenze:
             # df = pd.read_excel(str(path_month_data_folder) + "/" +file_name)
 
             for index, row in df.iterrows():
-                value = row[0]
+                value = row.iloc[0]
                 if pd.isnull(value) or value == "Giustificativo":
                     continue
                 elif value == "Matricola":
                     movimenti = []
-                    name = row[3]
-                    matricola = row[1]
+                    name = row.iloc[3]
+                    matricola = row.iloc[1]
 
                 elif value == "Note":
                     if matricola != 999 and matricola != 998:  # Francesco e Claudia
