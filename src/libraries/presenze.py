@@ -57,7 +57,7 @@ class Presenze:
                             date = datetime.date(year, month_number, i)
                         except ValueError:
                             break
-                        nr_ore = row[i]
+                        nr_ore = row.iloc[i]
                         movimento = Movimento(value, date, nr_ore)
                         movimenti.append(movimento)
             return dipendenti
